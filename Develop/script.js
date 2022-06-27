@@ -1,8 +1,12 @@
     // 1. present with a series of prompts/criteria
+          //need to make lists(ARRAYS) for words and numbers/signs
 
     // 2. validate input and at least one character type is selected
+          //need to force user to pick one prompt value to be true
+          // on passLength NEEDS to be a NUMBER
 
     // 3. generate the password
+          //need to randomly choose numbers and formulate between all of chosen lists(ARRAYS)
 
     // 4.  display the password on the page
 
@@ -12,31 +16,40 @@
 // targets html ID with a variable known as "generateBtn"
 var generateBtn = document.querySelector("#generate");
 
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
     passwordText.value = password;
-  var passLength = prompt("please choose between 8 and 128 characters...")
+ 
 
   function generatePassword() {
-    var lowCase = confirm("would you like your password to include lowercase words?");
+    //criteria to select
+    var lowCase = confirm("would you like your password to include lowercase letters?");
     var upCase = confirm("what about upper case letters?");
     var numbers = confirm("are numbers okay to put in there?");
     var speChar = confirm("and finally, special characters???");
-    console.log("confirm prompts");
+    var passLength = prompt("please choose between 8 and 128 characters...")
+    console.log("confirm prompts");    
 
-    return "password will go here";
-  }
 
   if (passLength <= 7 || passLength >= 129 ) {
     alert("please choose a proper value...");
     console.log("proper value kickback");
+
   } else if (passLength > 7 || passLength < 129 ) {
     console.log("it worked");
     
+  } else {
+    alert("use ONLY numbers");
+    console.log("invalid input register");
   }
     
+
+  }
+
   
 }
 
