@@ -1,12 +1,14 @@
     // 1. present with a series of prompts/criteria ~
           //need to make lists(ARRAYS) for words and numbers/signs ~
 
-    // 2. validate input and at least one character type is selected
-          //need to force user to pick one prompt value to be true 
+    // 2. validate input and at least one character type is selected ~
+          //need to force user to pick one prompt value to be true ~
           // on passLength NEEDS to be a NUMBER ~
 
     // 3. generate the password
           //need to randomly choose numbers and formulate between all of chosen lists(ARRAYS)
+          //need to merge between said arrays and randomize them after the correct choices
+
 
     // 4.  display the password on the page
 
@@ -47,29 +49,40 @@ function writePassword() {
     
     
     // Outcomes for passLength input
+    // password length check
     if (passLength <= 7 || passLength >= 129 ) {
       alert("please choose a proper value...");
       console.log("a number that was too high or low was picked");
-      
+      return "nothing!";
+
+      // the BASE Requirement for generation
     } else if (passLength > 7 || passLength < 129 ) {
       console.log("length requirement met");
       
+      // further in the decicion tree... these are outcomes for confirm prompts
+      // If no prompts are chosen
+      if (lowCase != true && upCase != true && nums != true && speChar != true) {
+        alert("you have to pick at least ONE property!!!");
+        console.log("prompt choice failure");
+        return "nothing!"
+      }
+      
+      // If all prompts are chosen
+      if (lowCase && upCase && nums && speChar) {
+        var everyChar = listLower.concat(listUpper,listNum,listChar);
+        console.log(everyChar);
+        alert("you Chose ALL prompts!")
+      }
+
+
     } else {
       alert("use ONLY numbers");
       console.log("something other than numbers was inputed");
+      return "nothing!"
     }
     
-    // Outcomes for confirm prompt
-    if (lowCase != true && upCase != true && nums != true && speChar != true) {
-      alert("you have to pick at least ONE property!!!");
-      console.log("prompt choice failure");
-    }
-    
-    
-
   }
 
-  
 }
 
 // Added event listener to generate button
