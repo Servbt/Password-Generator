@@ -13,8 +13,6 @@
     // 4.  display the password on the page
 
 
-
-
 // targets html ID with a variable known as "generateBtn"
 var generateBtn = document.querySelector("#generate");
 
@@ -22,13 +20,19 @@ var generateBtn = document.querySelector("#generate");
 var lowerLetters = "qwertyuiopasdfghjklzxcvbnm";
 var upperLetters = "QWERTYUIOPASDFGHJKLZXCVBNM";
 var numbers = "1234567890";
-var specList = " !#$%&()*+,-./:;<=>?@[\]^_`{|}~";
+var specList = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 
 // declaring arrays from string chunks
 var listLower = lowerLetters.split("");
 var listUpper = upperLetters.split("");
 var listNum = numbers.split("");
 var listChar = specList.split("");
+var everyChar = listLower.concat(listUpper,listNum,listChar);
+
+
+
+
+
 
 
 // Write password to the #password input
@@ -69,9 +73,13 @@ function writePassword() {
       
       // If all prompts are chosen
       if (lowCase && upCase && nums && speChar) {
-        var everyChar = listLower.concat(listUpper,listNum,listChar);
-        console.log(everyChar);
         alert("you Chose ALL prompts!")
+        for (i = 0; i < passLength; i++) {
+          var index = Math.floor(Math.random()* everyChar.length);
+          var randomAll = everyChar[index];
+          console.log(randomAll);
+        }
+        
       }
 
 
