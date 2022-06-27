@@ -6,8 +6,8 @@
           // on passLength NEEDS to be a NUMBER ~
 
     // 3. generate the password
-          //need to randomly choose numbers and formulate between all of chosen lists(ARRAYS)
-          //need to merge between said arrays and randomize them after the correct choices
+          //need to randomly choose numbers and formulate between all of chosen lists(ARRAYS) ~
+          //need to merge between said arrays and randomize them after the correct choices ~
 
 
     // 4.  display the password on the page
@@ -39,9 +39,9 @@ var everyChar = listLower.concat(listUpper,listNum,listChar);
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-    passwordText.value = password;
- 
-
+  passwordText.value = password;
+  
+  
   function generatePassword() {
     //criteria to select
     var lowCase = confirm("would you like your password to include lowercase letters?");
@@ -58,7 +58,7 @@ function writePassword() {
       alert("please choose a proper value...");
       console.log("a number that was too high or low was picked");
       return "nothing!";
-
+      
       // the BASE Requirement for generation
     } else if (passLength > 7 || passLength < 129 ) {
       console.log("length requirement met");
@@ -72,17 +72,21 @@ function writePassword() {
       }
       
       // If all prompts are chosen
+      // having issues with my logic, seems like there will be a lot of redundancy
       if (lowCase && upCase && nums && speChar) {
         alert("you Chose ALL prompts!")
+        // having issues displaying the password using a for loop
         for (i = 0; i < passLength; i++) {
           var index = Math.floor(Math.random()* everyChar.length);
-          var randomAll = everyChar[index];
-          console.log(randomAll);
-        }
-        
+            var randomAll = everyChar[index];
+            console.log(randomAll);
+            return randomAll;
+        }         
       }
+      
+      
 
-
+      //if anyother character is used for passLength
     } else {
       alert("use ONLY numbers");
       console.log("something other than numbers was inputed");
@@ -90,7 +94,7 @@ function writePassword() {
     }
     
   }
-
+  
 }
 
 // Added event listener to generate button
