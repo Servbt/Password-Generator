@@ -6,11 +6,13 @@
           // on passLength NEEDS to be a NUMBER ~
 
     // 3. generate the password
-          //need to randomly choose numbers and formulate between all of chosen lists(ARRAYS) ~
+          //need to randomly choose numbers and formulate between all of chosen lists(ARRAYS) 
           //need to merge between said arrays and randomize them after the correct choices ~
 
 
     // 4.  display the password on the page
+          // returni an array with no spaces or commas
+
 
 
 // targets html ID with a variable known as "generateBtn"
@@ -75,13 +77,19 @@ function writePassword() {
       // having issues with my logic, seems like there will be a lot of redundancy
       if (lowCase && upCase && nums && speChar) {
         alert("you Chose ALL prompts!")
-        // having issues displaying the password using a for loop
+
+        //actual array for password itself
+        var passGen = [];
+        // repeats random number and throws all results to array above
         for (i = 0; i < passLength; i++) {
           var index = Math.floor(Math.random()* everyChar.length);
-            var randomAll = everyChar[index];
-            console.log(randomAll);
-            return randomAll;
-        }         
+          var randomAll = everyChar[index];
+          passGen.push(randomAll);      
+          
+        }
+        //finished product, using a method to get rid of pesky commas
+        console.log(passGen.join(""));
+        return passGen.join("");
       }
       
       
@@ -89,7 +97,7 @@ function writePassword() {
       //if anyother character is used for passLength
     } else {
       alert("use ONLY numbers");
-      console.log("something other than numbers was inputed");
+      console.log("something other than a number was inputed");
       return "nothing!"
     }
     
