@@ -1,4 +1,4 @@
-    // 1. present with a series of prompts/criteria ~
+// 1. present with a series of prompts/criteria ~
           //need to make lists(ARRAYS) for words and numbers/signs ~
 
     // 2. validate input and at least one character type is selected ~
@@ -74,7 +74,7 @@ function writePassword() {
       }
       
       // If all prompts are chosen
-      // having issues with my logic, seems like there will be a lot of redundancy
+      // having issues with my logic, seems like there will be a lot of redundancy if I want to change the parameters
       if (lowCase && upCase && nums && speChar) {
         alert("you Chose ALL prompts!")
 
