@@ -5,7 +5,7 @@ I'll most likely come back when I have more time, I'm sorry.
 
 ## here is a screenshot of the website
 
-![the website.](./assets/Images/Capture.PNG)
+![the website.](./assets/Capture.PNG)
 
 
 ## Here are some links pertaining to the assigment
