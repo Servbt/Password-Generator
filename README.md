@@ -1,7 +1,7 @@
 # Password Generator
 
 I'm having alot of trouble with trying to effectively set parameters that allow for character choice... so far I've got a WIP js file uploaded on the assets folder.
-I'll most likely come back when I have more time, I'm sorry.
+I'll most likely come back when I have more time.
 
 ## here is a screenshot of the website
 
